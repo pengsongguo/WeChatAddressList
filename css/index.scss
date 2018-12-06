@@ -1,0 +1,81 @@
+/*页面基本样式*/
+* {
+    -webkit-touch-callout: none; /*系统默认菜单被禁用*/
+    -webkit-user-select: none; /*webkit浏览器*/
+    -khtml-user-select: none; /*早期浏览器*/
+    -moz-user-select: none; /*火狐*/
+    -ms-user-select: none; /*IE10*/
+    user-select: none;
+  }
+  
+  input, textarea {
+    -webkit-user-select: auto; /*webkit浏览器*/
+    margin: 0px;
+    padding: 0px;
+    outline: none;
+  }
+  
+  html, body {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    color: #666;
+    /*解决部分手机滑动卡顿*/
+    overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
+    /*设置内嵌的元素在3d空间如何呈现：保留3D*/
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    /*设置进行转换的元素的背面在对用户时是否可见：隐藏*/
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /*禁止复制、选中文本*/
+    //  -webkit-user-select: none;
+    //  -moz-user-select: none;
+    //  -ms-user-select: none;
+    //  user-select: none;
+    /*长按页面出现闪退*/
+    -webkit-touch-callout: none;
+    /*iphone,ipad下输入框默认内阴影清除*/
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /*ios和安卓下触摸元素时出现半透明灰色遮罩*/
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    /*动画定义3d启用硬件加速*/
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    /*retina屏幕的1px边框*/
+    border-width: thin;
+    /*某些安卓手机圆角失效*/
+    background-clip: padding-box;
+  }
+
+  //隐藏版心滚动条
+#layout::-webkit-scrollbar {
+    display: none;
+  }
+  
+  //定义比例
+  $base-scale: 75rem;
+  //定义主题色
+  @MainColor: #f29802;
+  
+  /*版心*/
+  #layout, #cityLayout, #choiceCourtLayout {
+    width: 100%;
+    height: 100%;
+    //顶部导航吸顶
+    overflow: scroll;
+    font-size: 28/@base-scale;
+    display: none;
+  }
+  
+  #layout {
+    display: block;
+  }
