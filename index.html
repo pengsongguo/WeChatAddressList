@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./js/flexible_css.js"></script>
+    <script src="./js/flexible.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <title>原生js仿照微信通讯录</title>
+</head>
+
+<body>
+<!-- 右侧|字母列表 -->
+<ul id="letters">
+    <li class="letter-item">A</li>
+    <li class="letter-item">B</li>
+    <li class="letter-item">C</li>
+    <li class="letter-item">D</li>
+    <li class="letter-item">E</li>
+    <li class="letter-item">F</li>
+    <li class="letter-item">G</li>
+    <li class="letter-item">H</li>
+    <li class="letter-item">I</li>
+    <li class="letter-item">J</li>
+    <li class="letter-item">K</li>
+    <li class="letter-item">L</li>
+    <li class="letter-item">M</li>
+    <li class="letter-item">N</li>
+    <li class="letter-item">O</li>
+    <li class="letter-item">P</li>
+    <li class="letter-item">Q</li>
+    <li class="letter-item">R</li>
+    <li class="letter-item">S</li>
+    <li class="letter-item">T</li>
+    <li class="letter-item">U</li>
+    <li class="letter-item">V</li>
+    <li class="letter-item">W</li>
+    <li class="letter-item">X</li>
+    <li class="letter-item">Y</li>
+    <li class="letter-item">Z</li>
+</ul>
+<!-- 人名单列表 -->
+<div class="list-container">
+    <dl id="namesList">
+        <dt id='a'>A</dt>
+        <dd>aaa</dd>
+        <dd>aaa</dd>
+        <dd>aaa</dd>
+        <dd>aaa</dd>
+        <dd>aaa</dd>
+        <dd>aaa</dd>
+        <dd>aaa</dd>
+        <dd>aaa</dd>
+        <dd>aaa</dd>
+        <dd>aaa</dd>
+        <dd>aaa</dd>
+        <dd>aaa</dd>
+        <dd>aaa</dd>
+        <dd>aaa</dd>
+        <dd>aaa</dd>
+        <dt id="b">B</dt>
+        <dd>bbb</dd>
+        <dd>bbb</dd>
+        <dd>bbb</dd>
+        <dd>bbb</dd>
+        <dd>bbb</dd>
+        <dd>bbb</dd>
+        <dd>bbb</dd>
+        <dd>bbb</dd>
+        <dd>bbb</dd>
+        <dd>bbb</dd>
+        <dd>bbb</dd>
+        <dd>bbb</dd>
+        <dd>bbb</dd>
+        <dd>bbb</dd>
+        <dd>bbb</dd>
+        <dd>bbb</dd>
+        <dd>bbb</dd>
+        <dt id="c">C</dt>
+        <dd>cccc</dd>
+        <dd>cccc</dd>
+        <dd>cccc</dd>
+        <dd>cccc</dd>
+        <dd>cccc</dd>
+        <dd>cccc</dd>
+        <dd>cccc</dd>
+        <dd>cccc</dd>
+        <dd>cccc</dd>
+        <dd>cccc</dd>
+        <dd>cccc</dd>
+        <dd>cccc</dd>
+        <dd>cccc</dd>
+        <dd>cccc</dd>
+        <dd>cccc</dd>
+        <dd>cccc</dd>
+        <dd>cccc</dd>
+        <dd>cccc</dd>
+        <dd>cccc</dd>
+        <dd>cccc</dd>
+        <dd>cccc</dd>
+        <dt id="d">D</dt>
+        <dd>dddd</dd>
+        <dd>dddd</dd>
+        <dd>dddd</dd>
+        <dd>dddd</dd>
+        <dd>dddd</dd>
+        <dd>dddd</dd>
+        <dd>dddd</dd>
+        <dd>dddd</dd>
+        <dd>dddd</dd>
+        <dd>dddd</dd>
+        <dd>dddd</dd>
+        <dd>dddd</dd>
+        <dd>dddd</dd>
+        <dd>dddd</dd>
+        <dd>dddd</dd>
+        <dd>dddd</dd>
+        <dd>dddd</dd>
+        <dt id="e">E</dt>
+        <dd>eeeee</dd>
+        <dd>eeeee</dd>
+        <dd>eeeee</dd>
+        <dd>eeeee</dd>
+        <dd>eeeee</dd>
+        <dd>eeeee</dd>
+        <dd>eeeee</dd>
+        <dd>eeeee</dd>
+        <dd>eeeee</dd>
+        <dd>eeeee</dd>
+        <dd>eeeee</dd>
+        <dd>eeeee</dd>
+        <dd>eeeee</dd>
+        <dd>eeeee</dd>
+        <dd>eeeee</dd>
+        <dd>eeeee</dd>
+        <dd>eeeee</dd>
+        <dt id="f">F</dt>
+        <dd>丰台</dd>
+        <dd>丰台</dd>
+        <dd>丰台</dd>
+        <dd>丰台</dd>
+        <dd>丰台</dd>
+        <dd>丰台</dd>
+        <dd>丰台</dd>
+        <dd>丰台</dd>
+        <dd>丰台</dd>
+        <dd>丰台</dd>
+        <dd>丰台</dd>
+        <dd>丰台</dd>
+        <dd>丰台</dd>
+        <dd>丰台</dd>
+        <dd>丰台</dd>
+        <dd>丰台</dd>
+        <dd>丰台</dd>
+        <dt id="g">G</dt>
+        <dd>ggggggggg</dd>
+        <dd>ggggggggg</dd>
+        <dd>ggggggggg</dd>
+        <dd>ggggggggg</dd>
+        <dd>ggggggggg</dd>
+        <dd>ggggggggg</dd>
+        <dd>ggggggggg</dd>
+        <dd>ggggggggg</dd>
+        <dd>ggggggggg</dd>
+        <dd>ggggggggg</dd>
+        <dd>ggggggggg</dd>
+        <dd>ggggggggg</dd>
+        <dd>ggggggggg</dd>
+        <dd>ggggggggg</dd>
+        <dd>ggggggggg</dd>
+        <dt id="h">H</dt>
+        <dd>hhhhh</dd>
+        <dd>hhhhh</dd>
+        <dd>hhhhh</dd>
+        <dd>hhhhh</dd>
+        <dd>hhhhh</dd>
+        <dd>hhhhh</dd>
+        <dd>hhhhh</dd>
+        <dd>hhhhh</dd>
+        <dd>hhhhh</dd>
+        <dd>hhhhh</dd>
+        <dd>hhhhh</dd>
+        <dd>hhhhh</dd>
+        <dt id="i">I</dt>
+        <dd>iiiiii</dd>
+        <dd>iiiiii</dd>
+        <dd>iiiiii</dd>
+        <dd>iiiiii</dd>
+        <dd>iiiiii</dd>
+        <dd>iiiiii</dd>
+        <dd>iiiiii</dd>
+        <dd>iiiiii</dd>
+        <dd>iiiiii</dd>
+        <dd>iiiiii</dd>
+        <dd>iiiiii</dd>
+        <dd>iiiiii</dd>
+        <dd>iiiiii</dd>
+        <dt id="j">J</dt>
+        <dd>jjjjjjj</dd>
+        <dd>jjjjjjj</dd>
+        <dd>jjjjjjj</dd>
+        <dd>jjjjjjj</dd>
+        <dd>jjjjjjj</dd>
+        <dd>jjjjjjj</dd>
+        <dd>jjjjjjj</dd>
+        <dd>jjjjjjj</dd>
+        <dd>jjjjjjj</dd>
+        <dt id="k">K</dt>
+        <dd>kkkkkk</dd>
+        <dd>kkkkkk</dd>
+        <dd>kkkkkk</dd>
+        <dd>kkkkkk</dd>
+        <dd>kkkkkk</dd>
+        <dd>kkkkkk</dd>
+        <dd>kkkkkk</dd>
+        <dt id="l">L</dt>
+        <dd>lllllll</dd>
+        <dd>lllllll</dd>
+        <dd>lllllll</dd>
+        <dd>lllllll</dd>
+        <dd>lllllll</dd>
+        <dd>lllllll</dd>
+        <dd>lllllll</dd>
+        <dd>lllllll</dd>
+        <dt id="m">M</dt>
+        <dd>mmmmmm</dd>
+        <dd>mmmmmm</dd>
+        <dd>mmmmmm</dd>
+        <dd>mmmmmm</dd>
+        <dd>mmmmmm</dd>
+        <dd>mmmmmm</dd>
+        <dd>mmmmmm</dd>
+        <dd>mmmmmm</dd>
+        <dd>mmmmmm</dd>
+        <dd>mmmmmm</dd>
+        <dd>mmmmmm</dd>
+        <dd>mmmmmm</dd>
+        <dd>mmmmmm</dd>
+        <dd>mmmmmm</dd>
+        <dt id="n">N</dt>
+        <dd>nnnnnnn</dd>
+        <dd>nnnnnnn</dd>
+        <dd>nnnnnnn</dd>
+        <dd>nnnnnnn</dd>
+        <dd>nnnnnnn</dd>
+        <dd>nnnnnnn</dd>
+        <dd>nnnnnnn</dd>
+        <dd>nnnnnnn</dd>
+        <dd>nnnnnnn</dd>
+        <dt id="o">O</dt>
+        <dd>oooo</dd>
+        <dd>oooo</dd>
+        <dd>oooo</dd>
+        <dd>oooo</dd>
+        <dd>oooo</dd>
+        <dd>oooo</dd>
+        <dd>oooo</dd>
+        <dd>oooo</dd>
+        <dd>oooo</dd>
+        <dd>oooo</dd>
+        <dd>oooo</dd>
+        <dd>oooo</dd>
+        <dd>oooo</dd>
+        <dt id="p">P</dt>
+        <dd>p</dd>
+        <dd>p</dd>
+        <dd>p</dd>
+        <dd>p</dd>
+        <dd>p</dd>
+        <dd>p</dd>
+        <dd>p</dd>
+        <dd>p</dd>
+        <dd>p</dd>
+        <dd>p</dd>
+        <dd>p</dd>
+        <dd>p</dd>
+        <dd>p</dd>
+        <dt id="q">Q</dt>
+        <dd>qqqqqqqqq</dd>
+        <dd>qqqqqqqqq</dd>
+        <dd>qqqqqqqqq</dd>
+        <dd>qqqqqqqqq</dd>
+        <dd>qqqqqqqqq</dd>
+        <dd>qqqqqqqqq</dd>
+        <dd>qqqqqqqqq</dd>
+        <dd>qqqqqqqqq</dd>
+        <dd>qqqqqqqqq</dd>
+        <dd>qqqqqqqqq</dd>
+        <dt id="r">R</dt>
+        <dd>rrrrrrrrr</dd>
+        <dd>rrrrrrrrr</dd>
+        <dd>rrrrrrrrr</dd>
+        <dd>rrrrrrrrr</dd>
+        <dd>rrrrrrrrr</dd>
+        <dt id="s">S</dt>
+        <dd>ssssss</dd>
+        <dd>ssssss</dd>
+        <dd>ssssss</dd>
+        <dd>ssssss</dd>
+        <dd>ssssss</dd>
+        <dd>ssssss</dd>
+        <dd>ssssss</dd>
+        <dt id="t">T</dt>
+        <dd>tttttt</dd>
+        <dd>tttttt</dd>
+        <dd>tttttt</dd>
+        <dd>tttttt</dd>
+        <dd>tttttt</dd>
+        <dt id="u">U</dt>
+        <dd>uuuuuuu</dd>
+        <dd>uuuuuuu</dd>
+        <dd>uuuuuuu</dd>
+        <dd>uuuuuuu</dd>
+        <dt id="v">V</dt>
+        <dd>vvvvvv</dd>
+        <dd>vvvvvv</dd>
+        <dd>vvvvvv</dd>
+        <dd>vvvvvv</dd>
+        <dd>vvvvvv</dd>
+        <dd>vvvvvv</dd>
+        <dd>vvvvvv</dd>
+        <dt id="w">W</dt>
+        <dd>wwwwww</dd>
+        <dd>wwwwww</dd>
+        <dd>wwwwww</dd>
+        <dd>wwwwww</dd>
+        <dd>wwwwww</dd>
+        <dd>wwwwww</dd>
+        <dt id="x">X</dt>
+        <dd>xxxxx</dd>
+        <dd>xxxxx</dd>
+        <dd>xxxxx</dd>
+        <dd>xxxxx</dd>
+        <dd>xxxxx</dd>
+        <dd>xxxxx</dd>
+        <dd>xxxxx</dd>
+        <dd>xxxxx</dd>
+        <dd>xxxxx</dd>
+        <dd>xxxxx</dd>
+        <dd>xxxxx</dd>
+        <dt id="y">Y</dt>
+        <dd>yyyyyyy</dd>
+        <dd>yyyyyyy</dd>
+        <dd>yyyyyyy</dd>
+        <dd>yyyyyyy</dd>
+        <dd>yyyyyyy</dd>
+        <dd>yyyyyyy</dd>
+        <dd>yyyyyyy</dd>
+        <dd>yyyyyyy</dd>
+        <dd>yyyyyyy</dd>
+        <dd>yyyyyyy</dd>
+        <dt id="z">Z</dt>
+        <dd>zzzzzz</dd>
+        <dd>zzzzzz</dd>
+        <dd>zzzzzz</dd>
+        <dd>zzzzzz</dd>
+        <dd>zzzzzz</dd>
+        <dd>zzzzzz</dd>
+        <dd>zzzzzz</dd>
+        <dd>zzzzzz</dd>
+        <dd>zzzzzz</dd>
+        <dd>zzzzzz</dd>
+    </dl>
+</div>
+<!--提示字母框-->
+<div class="tip">A</div>
+</body>
+
+</html>
+
+<script>
+    let tipDom = document.querySelector(".tip")
+    // 获取右侧字母DOM
+    let letterDom = document.querySelector("#letters")
+
+    // 右侧字母触摸判断逻辑
+    letterDom.addEventListener('touchmove', function (e) {
+        e.preventDefault()
+        //坐标（获取当前触控点的坐标）
+        let y = e.touches[0].clientY
+        let x = e.touches[0].clientX
+        //根据当前纵向坐标控制内容的位置
+        let MaxL = letterDom.getBoundingClientRect().left;
+        let MaxR = letterDom.getBoundingClientRect().right;
+        let MaxT = letterDom.getBoundingClientRect().top
+        let MaxB = letterDom.getBoundingClientRect().top + letterDom.getBoundingClientRect().height;
+        // 判断是否从一个字母到另一个字母
+        if ((x >= MaxL && x <= MaxR) && (y >= MaxT && y <= MaxB) && x && y) {
+            let ele = document.elementFromPoint(x, y)
+            let eleContent = ele.innerHTML
+            clickLetter(eleContent)
+            tipDom.innerHTML = eleContent
+            tipDom.style.display = 'block'
+            letterDom.style.background = "#B2B2B2"
+            letterDom.style.color = "#fff"
+        }
+        letterDom.removeEventListener("touchend", this, false)
+    })
+
+    letterDom.addEventListener("touchend", function (e) {
+        tipDom.style.display = "none"
+        letterDom.style.background = ""
+        letterDom.style.color = "#B2B2B2"
+        letterDom.removeEventListener("touchmove", this, false)
+    })
+
+    let letterDoms = document.querySelectorAll('#letters>.letter-item')
+
+    for (let i = 0; i < letterDoms.length; i++) {
+        const letterDom = letterDoms[i];
+        let letterTmp = letterDom.innerHTML
+       letterDom.addEventListener('click',function () {
+           clickLetter(letterTmp)
+       })
+    }
+
+    // 右侧字母点击事件
+    function clickLetter(letter) {
+        let tmpLetter = letter.toLowerCase()
+        let element = window.document.getElementById(tmpLetter)
+        element.scrollIntoView()
+    }
+
+</script>
